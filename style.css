@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.playGround {
+    border-radius: 50px;
+    background-color: rgba(45, 226, 45, 0.411);
+    padding: 3%;
+}
+
+.playGround .form-control {
+    margin: 10px 0px;
+}
+
+.boxOfQuiz {
+    border: 1px solid rgba(0, 0, 0, 0.651);
+    border-radius: 20px; 
+    padding: 2%;
+    margin: 2% 0%;
+}

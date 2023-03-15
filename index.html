@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div class="container" id="QuizForm">
+        <h1 class="text-center">Quiz Game</h1>
+        <div class="d-flex">
+            <button class="btn btn-outline-success" id="addQuiz">Add Quiz</button>
+        </div>
+        <div class="my-5">
+            <div class="mb-3">
+                <label for="name" class="form-label">Enter Your Name</label>
+                <input type="text" class="form-control" id="userName">
+            </div>
+            <div class="mb-3">
+                <label for="Choice" class="form-label">How many Question you played</label>
+                <select class="form-select" id="questionAmount">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="Choice" class="form-label">Select which type of Question</label>
+                <select class="form-select" id="questionChoose">
+                    <option value="choose" selected disabled>choose</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-outline-secondary w-100" id="playQuiz">Play Quiz</button>
+        </div>
+    </div>
+    <div class="container" id="getQuiz">
+        <h1 class="text-center">Get Quiz</h1>
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="getType" class="form-label">Which Type of Quiz create</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+            </div>
+        </div>
+        <div id="playGround" class="playGround">
+            <div class="row" id="quizDetail">
+                <div class="col-4 col-xm-12">
+                    <input type="number" class="form-control" placeholder="Enter Number Of Question" id="numberOfQuestion">
+                </div>
+                <div class="col-4 col-xm-12">
+                    <input type="number" class="form-control" placeholder="Enter Number Of Answers" id="numberOfAnswers">
+                </div>
+                <div class="col-4 col-xm-12">
+                    <button class="btn btn-warning" id="createQuiz" onclick="createBoard()">Create</button>
+                </div>
+            </div>
+            <form class="row" id="board">    
+                
+            </form>
+        </div>
+        <div class="row">
+            <div class="col my-5">
+                <button class="btn btn-danger" id="backToQuiz">Back</button>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
