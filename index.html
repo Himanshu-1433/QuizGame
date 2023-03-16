@@ -48,25 +48,21 @@
             <div class="col-12">
                 <div class="mb-3">
                     <label for="getType" class="form-label">Which Type of Quiz create</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <input type="text" class="form-control" id="getTypeOfQuiz" placeholder="Type Of Quiz">
                 </div>
             </div>
         </div>
         <div id="playGround" class="playGround">
             <div class="row" id="quizDetail">
                 <div class="col-4 col-xm-12">
-                    <input type="number" class="form-control" placeholder="Enter Number Of Question" id="numberOfQuestion">
-                </div>
-                <div class="col-4 col-xm-12">
-                    <input type="number" class="form-control" placeholder="Enter Number Of Answers" id="numberOfAnswers">
+                    <input type="number" class="form-control" placeholder="Enter Number Of Question"
+                        id="numberOfQuestion" required>
                 </div>
                 <div class="col-4 col-xm-12">
                     <button class="btn btn-warning" id="createQuiz" onclick="createBoard()">Create</button>
                 </div>
             </div>
-            <form class="row" id="board">    
-                
+            <form class="row" id="board" onsubmit="return false;">
             </form>
         </div>
         <div class="row">
