@@ -132,7 +132,9 @@ function getDataOfCreatedQuiz() {
     }
     console.log(arrOfOptions);
     let arr = [];
-    // for loop for the enter data into the json
+
+
+    // for loop for the create data as JSON Formate
     for (let x = 0; x < Question.length; x++) {
         let jsonData = {};
         let data = {};
@@ -143,7 +145,7 @@ function getDataOfCreatedQuiz() {
         arr.push(jsonData);
     }
     console.log(arr);
-    // createFile(arr);
+
 }
 
 getQuiz.style.display = "none";
@@ -175,15 +177,3 @@ function calculation(arr, ans) {
     }
     return data;
 }
-
-// function createFile(data) {
-//     const jsonFileCreate = require("browserify-fs");
-//     jsonFileCreate.writeFile("./api.json", data, error => {
-//         if (error) {
-//             console.log("Some Error are occured in creating file" + error);
-//         }
-//         else {
-//             console.log("Json File are created");
-//         }
-//     });
-// }
