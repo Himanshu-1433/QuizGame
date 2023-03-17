@@ -92,6 +92,7 @@ function checkFullfill() {
   } else {
     ret = 0;
   }
+
   if (errAns > 0) {
     ret = 1;
   } else {
@@ -302,7 +303,7 @@ function setQuiz() {
     }
   }
 
-  for (let x = currentQuestion; x < currentQuestion + 1; x++) {
+  for (let x = typeOfTheUser; x < typeOfTheUser + 1; x++) {
     QuestionNum.innerHTML = x + 1;
     QuestionStr.innerHTML =
       getItemOfTheLocalstorage[typeOfTheUser][0]["questionsBank"][x]["data"][
