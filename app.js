@@ -145,7 +145,6 @@ function getDataOfCreatedQuiz() {
         arr.push(jsonData);
     }
     console.log(arr);
-
 }
 
 getQuiz.style.display = "none";
