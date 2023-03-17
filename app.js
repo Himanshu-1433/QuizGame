@@ -20,9 +20,6 @@ ShowResult.style.display = "none";
 let result = document.getElementById("result");
 result.style.display = "none";
 
-
-
-
 function createBoard() {
   quizDetail.style.display = "none";
   let Questions = parseInt(numberOfQuestion.value);
@@ -258,15 +255,17 @@ playQuiz.addEventListener("click", () => {
 });
 let currentQuestion = 0;
 let QuestionCount = 0;
-for (let i = 1; i < arrOfQuestionLength; i++) {
-  if (getItemOfTheLocalstorage[i][0]["type"] == questionChoice.value) {
-    QuestionCount = i;
-    break;
-  }
-}
-lengthOfTheTypeQuestion =
-  getItemOfTheLocalstorage[QuestionCount][0]["questionsBank"].length - 1;
-
+questionChoice.addEventListener("change", function () {
+    for (let i = 1; i < arrOfQuestionLength; i++) {
+      if (getItemOfTheLocalstorage[i][0]["type"] == questionChoice.value) {
+        QuestionCount = i;
+        break;
+      }
+    }
+    lengthOfTheTypeQuestion =
+    getItemOfTheLocalstorage[QuestionCount][0]["questionsBank"].length - 1;
+  console.log(lengthOfTheTypeQuestion);
+});
 let UserResponse = [];
 let AnsoftheCorrect = 0;
 SubmitQuiz.addEventListener("click", () => {
@@ -303,7 +302,7 @@ function setQuiz() {
     }
   }
 
-  for (let x = typeOfTheUser; x < typeOfTheUser + 1; x++) {
+  for (let x = currentQuestion; x < currentQuestion + 1; x++) {
     QuestionNum.innerHTML = x + 1;
     QuestionStr.innerHTML =
       getItemOfTheLocalstorage[typeOfTheUser][0]["questionsBank"][x]["data"][

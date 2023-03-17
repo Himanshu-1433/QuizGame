@@ -71,5 +71,38 @@
                 }
             ]
         }
+    ],
+    [
+        {
+            "type": "science",
+            "questionsBank": [
+                {
+                    "data": {
+                        "ques": "adslfkj",
+                        "option": {
+                            "correctAns": "asdf",
+                            "incorrectAns": [
+                                "asdfasdf",
+                                "asdfasdfasd",
+                                "asdfasdfadsfasd"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "ques": "asdfjasdfklj",
+                        "option": {
+                            "correctAns": "a",
+                            "incorrectAns": [
+                                "sdafasdfsadf",
+                                "asdfasda",
+                                "aa"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
     ]
 ]
