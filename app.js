@@ -20,15 +20,13 @@ function createBoard() {
     quizDetail.style.display = "none";
     let Questions = parseInt(numberOfQuestion.value);
     let Options = 5;
-    console.log(Questions);
-    console.log(Options);
     let obj = {};
     obj.type = getTypeOfQuiz;
     for (let x = 0; x < Questions; x++) {
         const div = document.createElement("div");
         div.setAttribute("class", "col-12 boxOfQuiz");
         const Question = document.createElement("input");
-        Question.setAttribute("placeholder", "Enter Question hear");
+        Question.setAttribute("placeholder", (x + 1) + ". Enter Question hear");
         Question.setAttribute("class", "form-control my-1 question");
         Question.required = true;
 
@@ -41,13 +39,13 @@ function createBoard() {
                 options.setAttribute("placeholder", "Enter Answer hear");
                 options.setAttribute("class", "answerofQuizQuestion form-control my-1");
                 div.appendChild(options);
-                console.log("answer = " + y);
+                options.required = true;
             }
 
             else {
                 const options = document.createElement("input");
                 options.setAttribute("placeholder", "Enter Option number " + (y + 1));
-                options.setAttribute("class", "optionOfQuiz form-control my-1 mx-2");
+                options.setAttribute("class", "optionOfQuiz form-control my-2");
                 div.appendChild(options);
                 options.required = true;
             }
@@ -86,21 +84,18 @@ function checkFullfill() {
     }
     let ret = 0;
     if (errQues > 0) {
-        alert("Question missing : " + errQues);
         ret = 1;
     }
     else {
         ret = 0;
     }
     if (errAns > 0) {
-        alert("Answer missing : " + errAns);
         ret = 1;
     }
     else {
         ret = 0;
     }
     if (errOpt) {
-        alert("Option missing : " + errOpt);
         ret = 1;
     }
     else {
@@ -111,14 +106,16 @@ function checkFullfill() {
         getDataOfCreatedQuiz();
     }
 }
-
+let alr = document.getElementById("msgAdded");
+alr.style.display = "none";
 function getDataOfCreatedQuiz() {
-    
     let Question = document.getElementsByClassName("question");
     let Answer = document.getElementsByClassName("answerofQuizQuestion");
     let options = document.getElementsByClassName("optionOfQuiz");
     let arrOfOptions = [];
     let len = 0;
+
+
     // for loop for the enter options into the array
     for (let x = 0; x < Question.length; x++) {
         let str = [];
@@ -130,21 +127,40 @@ function getDataOfCreatedQuiz() {
         }
         arrOfOptions.push(str);
     }
-    console.log(arrOfOptions);
     let arr = [];
-
-
+    let storage = JSON.parse(localStorage.getItem("QuizData"));
+    let alrBox = 0;
     // for loop for the create data as JSON Formate
+    let jsonData = {};
+    jsonData.type = getTypeOfQuiz.value;
     for (let x = 0; x < Question.length; x++) {
-        let jsonData = {};
         let data = {};
         data.ques = Question[x].value;
         data.option = calculation(arrOfOptions[x], Answer[x].value);
-        jsonData.type = getTypeOfQuiz.value;
         jsonData.Question = data;
         arr.push(jsonData);
+        jsonData = {};
     }
-    console.log(arr);
+    if (storage == null) {
+        localStorage.setItem("QuizData", JSON.stringify(arr))
+        console.log("First value are added");
+        alrBox = 1;
+    }
+    else {
+        storage.push(arr);
+        localStorage.setItem("QuizData", JSON.stringify(storage))
+        console.log("Items are added");
+        alrBox = 1;
+    }
+    if (alrBox == 1) {
+        QuizForm.style.display = "block";
+        getQuiz.style.display = "none";
+        alr.style.display = "block"
+        setInterval(() => {
+            window.location.reload();
+        }, 2000);
+        console.log("hell");
+    }
 }
 
 getQuiz.style.display = "none";
@@ -156,6 +172,7 @@ addQuiz.addEventListener("click", () => {
 backToQuiz.addEventListener("click", () => {
     QuizForm.style.display = "block";
     getQuiz.style.display = "none";
+    window.location.reload();
 });
 
 function calculation(arr, ans) {

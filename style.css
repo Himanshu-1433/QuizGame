@@ -18,7 +18,54 @@
 
 .boxOfQuiz {
     border: 1px solid rgba(0, 0, 0, 0.651);
-    border-radius: 20px; 
+    border-radius: 20px;
     padding: 2%;
     margin: 2% 0%;
+}
+
+.question {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: background border 0.25s ease-in;
+}
+
+.question:focus {
+    background: rgba(71, 47, 47, 0.219);
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(17, 0, 255);
+}
+
+.answerofQuizQuestion {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: background border 0.25s ease-in;
+}
+
+.answerofQuizQuestion:focus {
+    background: rgba(158, 148, 148, 0.219);
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(0, 255, 255);
+}
+
+.optionOfQuiz {
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    border-left: 3px solid rgb(0, 247, 255);
+    transition: border 0.1s ease-in;
+}
+
+.optionOfQuiz:focus {
+    background: rgba(158, 148, 148, 0.219);
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-left: 10px solid rgb(0, 247, 255);
 }
