@@ -1,48 +1,18 @@
 [
-    {
-        "type": "maths",
-        "questionsBank": [
-            {
-                "data": {
-                    "ques": "asdf",
-                    "option": {
-                        "correctAns": "2",
-                        "incorrectAns": [
-                            "1",
-                            "3",
-                            "4"
-                        ]
-                    }
-                }
-            },
-            {
-                "data": {
-                    "ques": "asdf",
-                    "option": {
-                        "correctAns": "4",
-                        "incorrectAns": [
-                            "1",
-                            "2",
-                            "3"
-                        ]
-                    }
-                }
-            }
-        ]
-    },
+    {},
     [
         {
-            "type": "science",
+            "type": "maths",
             "questionsBank": [
                 {
                     "data": {
                         "ques": "asdf",
                         "option": {
-                            "correctAns": "2",
+                            "correctAns": "4",
                             "incorrectAns": [
                                 "1",
-                                "3",
-                                "4"
+                                "2",
+                                "3"
                             ]
                         }
                     }
@@ -56,6 +26,39 @@
                                 "1",
                                 "2",
                                 "3"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "type": "science",
+            "questionsBank": [
+                {
+                    "data": {
+                        "ques": "ja;sldkfj",
+                        "option": {
+                            "correctAns": "Nothing match",
+                            "incorrectAns": [
+                                "1",
+                                "2",
+                                "3",
+                                "4"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "ques": ";ldfkjalsdh",
+                        "option": {
+                            "correctAns": "3",
+                            "incorrectAns": [
+                                "1",
+                                "2"
                             ]
                         }
                     }

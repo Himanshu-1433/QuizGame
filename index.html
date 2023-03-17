@@ -27,17 +27,6 @@
                 <input type="text" class="form-control" id="userName">
             </div>
             <div class="mb-3">
-                <label for="Choice" class="form-label">How many Question you played</label>
-                <select class="form-select" id="questionAmount">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="40">40</option>
-                    <option value="50">50</option>
-                </select>
-            </div>
-            <div class="mb-3">
                 <label for="Choice" class="form-label">Select which type of Question</label>
                 <select class="form-select" id="questionChoose">
                     <option value="choose" selected disabled>choose</option>
@@ -75,10 +64,20 @@
             </div>
         </div>
     </div>
-    <div class="container" id="QuizArea">
-        <h1>play Your <span id="showQuizType"></span> Quiz Game</h1>
+    <div class="container p-3" id="QuizArea">
+        <h1>Hi <span id="userNameShow"></span> play Your <span id="showQuizType"></span> Quiz Game</h1>
+        <div class="PlayArea">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" id=""></h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
     <script src="./app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

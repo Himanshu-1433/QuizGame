@@ -107,6 +107,16 @@ function checkFullfill() {
 }
 let alr = document.getElementById("msgAdded");
 alr.style.display = "none";
+
+let storage = JSON.parse(localStorage.getItem("QuizData"));
+if (storage == null) {
+    let dummyArray = [];
+    let dummyObj = {};
+    dummyArray.push(dummyObj);
+    localStorage.setItem("QuizData", JSON.stringify(dummyArray));
+    console.log("First value are added");
+    console.log(storage);
+}
 function getDataOfCreatedQuiz() {
     let Question = document.getElementsByClassName("question");
     let Answer = document.getElementsByClassName("answerofQuizQuestion");
@@ -127,7 +137,6 @@ function getDataOfCreatedQuiz() {
         arrOfOptions.push(str);
     }
     // for loop for the create data as JSON Formate
-    let storage = JSON.parse(localStorage.getItem("QuizData"));
     let alrBox = 0;
     let jsonMainData = {};
     let data = {};
@@ -145,17 +154,13 @@ function getDataOfCreatedQuiz() {
     jsonMainData.questionsBank = arr;
     let arr2 = [];
     arr2.push(jsonMainData);
-    if (storage == null) {
-        localStorage.setItem("QuizData", JSON.stringify(arr2))
-        console.log("First value are added");
-        alrBox = 1;
-    }
-    else {
-        storage.push(arr2);
-        localStorage.setItem("QuizData", JSON.stringify(storage))
-        console.log("Items are added");
-        alrBox = 1;
-    }
+
+
+    storage.push(arr2);
+    localStorage.setItem("QuizData", JSON.stringify(storage))
+    console.log("Items are added");
+    alrBox = 1;
+
     if (alrBox == 1) {
         QuizForm.style.display = "block";
         getQuiz.style.display = "none";
@@ -202,12 +207,30 @@ function calculation(arr, ans) {
 // frontend view
 // LocalStorage data
 let getItemOfTheLocalstorage = JSON.parse(localStorage.getItem("QuizData"));
-console.log(getItemOfTheLocalstorage);
 // Quiz Logics
+
+let arrOfQuestionLength = getItemOfTheLocalstorage.length;
+let questionlength = getItemOfTheLocalstorage[1].length;
+
+// get the type of the question and append in the select option
+for (let x = 1; x < arrOfQuestionLength; x++) {
+    for (let y = 0; y < 1; y++) {
+        let optionOfSelect = document.createElement("option");
+        optionOfSelect.innerHTML = getItemOfTheLocalstorage[x][y]["type"];
+        optionOfSelect.value = getItemOfTheLocalstorage[x][y]["type"];
+        questionChoice.appendChild(optionOfSelect);
+    }
+}
+
+let showQuizType = document.getElementById("showQuizType");
 let QuizArea = document.getElementById("QuizArea");
+let userNameShow = document.getElementById("userNameShow");
 QuizArea.style.display = "none";
-playQuiz.addEventListener("click", () => {
+playQuiz.addEventListener("click", () => { 
     QuizArea.style.display = "block";
     QuizForm.style.display = "none";
+    userNameShow.innerHTML = userName.value;
+    showQuizType.innerHTML = questionChoice.value;
 });
+
 
