@@ -13,7 +13,6 @@ let numberOfQuestion = document.getElementById("numberOfQuestion");
 let board = document.getElementById("board");
 let quizDetail = document.getElementById("quizDetail");
 let getTypeOfQuiz = document.getElementById("getTypeOfQuiz");
-
 quizDetail.style.display = "block";
 
 function createBoard() {
@@ -127,27 +126,32 @@ function getDataOfCreatedQuiz() {
         }
         arrOfOptions.push(str);
     }
-    let arr = [];
+    // for loop for the create data as JSON Formate
     let storage = JSON.parse(localStorage.getItem("QuizData"));
     let alrBox = 0;
-    // for loop for the create data as JSON Formate
-    let jsonData = {};
-    jsonData.type = getTypeOfQuiz.value;
+    let jsonMainData = {};
+    let data = {};
+    let arr = [];
+    let obj = {};
+    jsonMainData.type = getTypeOfQuiz.value;
     for (let x = 0; x < Question.length; x++) {
-        let data = {};
         data.ques = Question[x].value;
         data.option = calculation(arrOfOptions[x], Answer[x].value);
-        jsonData.Question = data;
-        arr.push(jsonData);
-        jsonData = {};
+        obj.data = data;
+        arr.push(obj);
+        data = {};
+        obj = {};
     }
+    jsonMainData.questionsBank = arr;
+    let arr2 = [];
+    arr2.push(jsonMainData);
     if (storage == null) {
-        localStorage.setItem("QuizData", JSON.stringify(arr))
+        localStorage.setItem("QuizData", JSON.stringify(arr2))
         console.log("First value are added");
         alrBox = 1;
     }
     else {
-        storage.push(arr);
+        storage.push(arr2);
         localStorage.setItem("QuizData", JSON.stringify(storage))
         console.log("Items are added");
         alrBox = 1;
@@ -193,3 +197,17 @@ function calculation(arr, ans) {
     }
     return data;
 }
+
+
+// frontend view
+// LocalStorage data
+let getItemOfTheLocalstorage = JSON.parse(localStorage.getItem("QuizData"));
+console.log(getItemOfTheLocalstorage);
+// Quiz Logics
+let QuizArea = document.getElementById("QuizArea");
+QuizArea.style.display = "none";
+playQuiz.addEventListener("click", () => {
+    QuizArea.style.display = "block";
+    QuizForm.style.display = "none";
+});
+

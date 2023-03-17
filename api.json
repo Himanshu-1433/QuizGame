@@ -1,0 +1,66 @@
+[
+    {
+        "type": "maths",
+        "questionsBank": [
+            {
+                "data": {
+                    "ques": "asdf",
+                    "option": {
+                        "correctAns": "2",
+                        "incorrectAns": [
+                            "1",
+                            "3",
+                            "4"
+                        ]
+                    }
+                }
+            },
+            {
+                "data": {
+                    "ques": "asdf",
+                    "option": {
+                        "correctAns": "4",
+                        "incorrectAns": [
+                            "1",
+                            "2",
+                            "3"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    [
+        {
+            "type": "science",
+            "questionsBank": [
+                {
+                    "data": {
+                        "ques": "asdf",
+                        "option": {
+                            "correctAns": "2",
+                            "incorrectAns": [
+                                "1",
+                                "3",
+                                "4"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "ques": "asdf",
+                        "option": {
+                            "correctAns": "4",
+                            "incorrectAns": [
+                                "1",
+                                "2",
+                                "3"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+]
