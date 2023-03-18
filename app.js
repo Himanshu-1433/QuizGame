@@ -233,6 +233,20 @@ let QuizOption = document.getElementsByName("QuizOption");
 // submit Quiz
 let SubmitQuiz = document.getElementById("SubmitQuiz");
 
+let currentQuestion = 0;
+let QuestionCount = 0;
+questionChoice.addEventListener("change", function () {
+  for (let i = 1; i < arrOfQuestionLength; i++) {
+    if (getItemOfTheLocalstorage[i][0]["type"] == questionChoice.value) {
+      QuestionCount = i;
+      break;
+    }
+  }
+  lengthOfTheTypeQuestion =
+    getItemOfTheLocalstorage[QuestionCount][0]["questionsBank"].length - 1;
+  console.log(lengthOfTheTypeQuestion);
+});
+
 QuizArea.style.display = "none";
 let correctAnswerArr = [];
 playQuiz.addEventListener("click", () => {
@@ -240,6 +254,7 @@ playQuiz.addEventListener("click", () => {
   QuizForm.style.display = "none";
   userNameShow.innerHTML = userName.value;
   showQuizType.innerHTML = questionChoice.value;
+  console.log(getItemOfTheLocalstorage[QuestionCount]);
   for (
     let x = 0;
     x < getItemOfTheLocalstorage[QuestionCount][0]["questionsBank"].length;
@@ -247,25 +262,13 @@ playQuiz.addEventListener("click", () => {
   ) {
     correctAnswerArr.push(
       getItemOfTheLocalstorage[QuestionCount][0]["questionsBank"][x]["data"][
-        "option"
+      "option"
       ]["correctAns"]
     );
   }
   setQuiz();
 });
-let currentQuestion = 0;
-let QuestionCount = 0;
-questionChoice.addEventListener("change", function () {
-    for (let i = 1; i < arrOfQuestionLength; i++) {
-      if (getItemOfTheLocalstorage[i][0]["type"] == questionChoice.value) {
-        QuestionCount = i;
-        break;
-      }
-    }
-    lengthOfTheTypeQuestion =
-    getItemOfTheLocalstorage[QuestionCount][0]["questionsBank"].length - 1;
-  console.log(lengthOfTheTypeQuestion);
-});
+
 let UserResponse = [];
 let AnsoftheCorrect = 0;
 SubmitQuiz.addEventListener("click", () => {
@@ -306,27 +309,27 @@ function setQuiz() {
     QuestionNum.innerHTML = x + 1;
     QuestionStr.innerHTML =
       getItemOfTheLocalstorage[typeOfTheUser][0]["questionsBank"][x]["data"][
-        "ques"
+      "ques"
       ];
     let arrOfOptionsINQuizBoard = [];
     arrOfOptionsINQuizBoard.push(
       getItemOfTheLocalstorage[typeOfTheUser][0]["questionsBank"][x]["data"][
-        "option"
+      "option"
       ]["correctAns"]
     );
     arrOfOptionsINQuizBoard.push(
       getItemOfTheLocalstorage[typeOfTheUser][0]["questionsBank"][x]["data"][
-        "option"
+      "option"
       ]["incorrectAns"][0]
     );
     arrOfOptionsINQuizBoard.push(
       getItemOfTheLocalstorage[typeOfTheUser][0]["questionsBank"][x]["data"][
-        "option"
+      "option"
       ]["incorrectAns"][1]
     );
     arrOfOptionsINQuizBoard.push(
       getItemOfTheLocalstorage[typeOfTheUser][0]["questionsBank"][x]["data"][
-        "option"
+      "option"
       ]["incorrectAns"][2]
     );
     let randomNum = randomNumArr();
