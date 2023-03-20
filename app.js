@@ -368,17 +368,15 @@ function displayValueChecRadioBtn() {
 }
 
 function finalCalculation(userResponse, correctArray) {
+  console.log(userResponse);
+  console.log(correctArray);
   // userResponse , correctArray
-  let correct = 0;
-  let noCorrect = 0;
-  for (let x = 0; x < correctArray.length; x++) {
+  let correct = 0;  
     for (let y = 0; y < correctArray.length; y++) {
-      if (userResponse[x] == correctArray[y]) {
+      if (userResponse[y] == correctArray[y]) {
         correct++;
-      } else {
-        noCorrect++;
+        console.log(correct);
       }
     }
-  }
   return correct;
 }

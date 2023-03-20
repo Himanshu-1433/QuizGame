@@ -6,65 +6,26 @@
             "questionsBank": [
                 {
                     "data": {
-                        "ques": "5+5",
+                        "ques": "asdf",
                         "option": {
-                            "correctAns": "10",
+                            "correctAns": "4",
                             "incorrectAns": [
-                                "11",
-                                "12",
-                                "14"
+                                "1",
+                                "2",
+                                "3"
                             ]
                         }
                     }
                 },
                 {
                     "data": {
-                        "ques": "40-39+200-5",
+                        "ques": "asdf",
                         "option": {
-                            "correctAns": "196",
+                            "correctAns": "4",
                             "incorrectAns": [
-                                "198",
-                                "185",
-                                "195"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "data": {
-                        "ques": "50/0",
-                        "option": {
-                            "correctAns": "0",
-                            "incorrectAns": [
-                                "20",
-                                "10.566666664",
-                                "30.488"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "data": {
-                        "ques": "30+22+1-0",
-                        "option": {
-                            "correctAns": "53",
-                            "incorrectAns": [
-                                "1033",
-                                "200",
-                                "51"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "data": {
-                        "ques": "27-1",
-                        "option": {
-                            "correctAns": "26",
-                            "incorrectAns": [
-                                "22",
-                                "25",
-                                "24"
+                                "1",
+                                "2",
+                                "3"
                             ]
                         }
                     }
@@ -78,26 +39,72 @@
             "questionsBank": [
                 {
                     "data": {
-                        "ques": "adslfkj",
+                        "ques": "ja;sldkfj",
                         "option": {
-                            "correctAns": "asdf",
+                            "correctAns": "Nothing match",
                             "incorrectAns": [
-                                "asdfasdf",
-                                "asdfasdfasd",
-                                "asdfasdfadsfasd"
+                                "1",
+                                "2",
+                                "3",
+                                "4"
                             ]
                         }
                     }
                 },
                 {
                     "data": {
-                        "ques": "asdfjasdfklj",
+                        "ques": ";ldfkjalsdh",
                         "option": {
-                            "correctAns": "a",
+                            "correctAns": "3",
                             "incorrectAns": [
-                                "sdafasdfsadf",
-                                "asdfasda",
-                                "aa"
+                                "1",
+                                "2"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "type": "IT",
+            "questionsBank": [
+                {
+                    "data": {
+                        "ques": "it",
+                        "option": {
+                            "correctAns": "44",
+                            "incorrectAns": [
+                                "1",
+                                "23",
+                                "33"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "ques": "it2",
+                        "option": {
+                            "correctAns": "44",
+                            "incorrectAns": [
+                                "11",
+                                "22",
+                                "33"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "ques": "it3",
+                        "option": {
+                            "correctAns": "33",
+                            "incorrectAns": [
+                                "11",
+                                "22",
+                                "44"
                             ]
                         }
                     }
