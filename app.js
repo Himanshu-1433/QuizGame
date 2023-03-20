@@ -183,7 +183,7 @@ backToQuiz.addEventListener("click", () => {
 
 function calculation(arr, ans) {
   let incorrectArray = [];
-  let error = "Nothing match";
+  let error = "None";
   let correct = error;
   for (let x = 0; x < arr.length; x++) {
     if (arr[x] === ans) {
